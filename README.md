@@ -2,12 +2,12 @@ Git repository?
 - place to store file or folders.
 - easy to do the version control
 
-1) Remote repository: save the files on server. you can share with others. \n
-2) Local repository: save the files on my local computer.\n
+1) Remote repository: save the files on server. you can share with others.<br>
+2) Local repository: save the files on my local computer.<br>
 
-Local repository = Your file folder = work tree\n
-Staging area = index\n
-Remote Repository\n
+Local repository = Your file folder = work tree<br>
+Staging area = index<br>
+Remote Repository<br>
 
 - Push: update from local repo to remote repo
 - Clone: cloning files from remote repo
@@ -15,9 +15,11 @@ Remote Repository\n
 - Merge: if somebody made change and push, it reject my push.
 - Conflict: if others and I change the same line of the code.
 
+Branch Types
 - Integration Branch
 - Topic Branch = feature branch: use for fixing bug. branch from develope branch, merge into develope branch after done.
 
+Merge
 - Fast-forward merge: master branch didn't make any change since it create the other branch
 - Not fast-forward merge 
 - rebase: merge into one, remove the other branch 
