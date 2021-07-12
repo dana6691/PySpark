@@ -1,4 +1,4 @@
-```
+```python
 # Writing on file
 echo hello > file1.txt
 echo hello > file2.txt
@@ -66,7 +66,7 @@ git config --global -e
 ```
 
 ##########################################################################
-```
+```python
 # Add local repo
 git remote add origin <repo-url>
 # Push the change to the master from origin
@@ -85,7 +85,7 @@ git clone https://github.com/dana6691/apache_airflow.git
 ```
 
 ## Remote
-```
+```python
 # Add
 git remote add <new-remote> <repo-url>
 git remote add new https://github.com/dana6691/apache_airflow.git
