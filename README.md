@@ -1,4 +1,4 @@
-'''
+```
 # Writing on file
 echo hello > file1.txt
 echo hello > file2.txt
@@ -63,10 +63,10 @@ git diff
 git config --global diff.tool vscode
 git config --global diff.tool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 git config --global -e
-'''
+```
 
 ##########################################################################
-'''
+```
 # Add local repo
 git remote add origin <repo-url>
 # Push the change to the master from origin
@@ -82,10 +82,10 @@ git branch -r
 
 # Add Local repo 
 git clone https://github.com/dana6691/apache_airflow.git
-'''
+```
 
 ## Remote
-'''
+```
 # Add
 git remote add <new-remote> <repo-url>
 git remote add new https://github.com/dana6691/apache_airflow.git
@@ -100,4 +100,4 @@ git push origin master
 # Renaming & Removing
 git remote rename origin paul
 git remote remove paul
-'''
+```
