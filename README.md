@@ -27,6 +27,14 @@ git commit -am "fix the bug"
 git rm file2.txt
 git commit -m "Remove file2."
 
+# Remove entire directory from the staging area
+mkdir bin
+echo hello > bin/app.bin
+git status
+git add .
+git commit -m "Add bin."
+git rm --cached -r bin/
+
 # Renaming & Moving
 git mv file1.txt main.js 
 git commit -m "Refactor code."
@@ -39,9 +47,31 @@ echo logs/ > .gitignore     # ignore log files
 git add .gitignore          # add to staging area
 git commit -m "Add gitignore"
 
-mkdir bin
-echo hello > bin/app.bin
-git status
-git add .
-git commit -m "Add bin."
+# Check git status short
+git status -s
+---RED = in working directory
+---GREEN = in staging area
+---M = modified
+---A = added
+
+# Check the different area
+git diff --staged
+git diff
+
+# Diff tools
+git config --global diff.tool vscode
+git config --global diff.tool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+git config --global -e
+
+
+##########################################################################
+
+# Add local repo
+git remote add origin <repo-url>
+
+# Push the change to the master from origin
+git push origin master
+
+# Local master branch is link to remote master branch
+git push --set-upstream origin master
 
