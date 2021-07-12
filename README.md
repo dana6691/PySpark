@@ -5,7 +5,7 @@ Git repository?
 1) Remote repository: save the files on server. you can share with others.<br>
 2) Local repository: save the files on my local computer.<br>
 
-# Workflow
+Workflow
 - commit: taking a snapshot of our project
 - staging area  = index: area in between our project repo and git repo. Reviewing our modified files before we permannently stored snapshots into our git repo. 
 - Push: update from local repo to remote repo
