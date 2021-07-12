@@ -5,15 +5,16 @@ Git repository?
 1) Remote repository: save the files on server. you can share with others.<br>
 2) Local repository: save the files on my local computer.<br>
 
-Local repository = Your file folder = work tree<br>
-Staging area = index<br>
-Remote Repository<br>
-
+# Workflow
+- commit: taking a snapshot of our project
+- staging area  = index: area in between our project repo and git repo. Reviewing our modified files before we permannently stored snapshots into our git repo. 
 - Push: update from local repo to remote repo
 - Clone: cloning files from remote repo
 - Pull: update from remote repo to local repo
 - Merge: if somebody made change and push, it reject my push.
 - Conflict: if others and I change the same line of the code.
+- Stash: Before creating a new branch, temporary stored the changes into other area.
+You can bring it back later to the branch.  
 
 Branch Types
 - Integration Branch
@@ -25,9 +26,9 @@ Merge
 - rebase: merge into one, remove the other branch 
 
 
-
+## Basic
 ```python
-# Writing on file
+# Create & Write on file
 echo hello > file1.txt
 echo hello > file2.txt
 
@@ -93,24 +94,6 @@ git config --global diff.tool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 git config --global -e
 ```
 
-##########################################################################
-```python
-# Add local repo
-git remote add origin <repo-url>
-# Push the change to the master from origin
-git push origin master
-
-# Local master branch is link to remote master branch
-git push --set-upstream origin master
-
-
-# Branch list
-git branch -a
-git branch -r
-
-# Add Local repo 
-git clone https://github.com/dana6691/apache_airflow.git
-```
 ## Branch
 ```python
 # Add
@@ -126,18 +109,15 @@ git merge <branch>
 git branch  -d <branch>
 # List of current branches
 git branch
+git branch -a       # both remote branches and local branches.
 git branch -v       # last commit on each branch
 git branch --merged # merged branches
 git branch --no-merged
 # Delete
-git push origin --delete new_branch
+git push -d origin new_branch
+git push -d <name-of-remote-repository> <branch-name>
 ```
-## Stash
-```python
-Before creating a new branch, temporary stored the changes into other area.
-You can bring it back later to the branch.  
 
-```
 ## Remote
 ```python
 # Add
@@ -155,4 +135,9 @@ git push origin master
 git remote rename origin paul
 git remote remove paul
 # Fetch: move from remote to local repo
+```
+## Fetch
+```python
+# pull all remote branchs
+git fetch --all
 ```
