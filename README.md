@@ -1,3 +1,29 @@
+Git repository?
+- place to store file or folders.
+- easy to do the version control
+
+1) Remote repository: save the files on server. you can share with others. \n
+2) Local repository: save the files on my local computer.\n
+
+Local repository = Your file folder = work tree\n
+Staging area = index\n
+Remote Repository\n
+
+- Push: update from local repo to remote repo
+- Clone: cloning files from remote repo
+- Pull: update from remote repo to local repo
+- Merge: if somebody made change and push, it reject my push.
+- Conflict: if others and I change the same line of the code.
+
+- Integration Branch
+- Topic Branch = feature branch: use for fixing bug. branch from develope branch, merge into develope branch after done.
+
+- Fast-forward merge: master branch didn't make any change since it create the other branch
+- Not fast-forward merge 
+- rebase: merge into one, remove the other branch 
+
+
+
 ```python
 # Writing on file
 echo hello > file1.txt
@@ -83,7 +109,33 @@ git branch -r
 # Add Local repo 
 git clone https://github.com/dana6691/apache_airflow.git
 ```
+## Branch
+```python
+# Add
+git branch <new-branch>
+git push --set-upstream <new-branch> <new-branch> # set remote as upstream
+# Switch
+git checkout <branch>
+# Add + Switch
+git checkout -b <new-branch>
+# Merge
+git merge <branch>
+# Delete
+git branch  -d <branch>
+# List of current branches
+git branch
+git branch -v       # last commit on each branch
+git branch --merged # merged branches
+git branch --no-merged
+# Delete
+git push origin --delete new_branch
+```
+## Stash
+```python
+Before creating a new branch, temporary stored the changes into other area.
+You can bring it back later to the branch.  
 
+```
 ## Remote
 ```python
 # Add
@@ -94,10 +146,11 @@ git remote
 git remote -v
 # Inspecting
 git remote show origin
-# Push the change to the master from origin
+# Push the change of branch to your remotes
 git push <remote> <branch>
 git push origin master
 # Renaming & Removing
 git remote rename origin paul
 git remote remove paul
+# Fetch: move from remote to local repo
 ```
