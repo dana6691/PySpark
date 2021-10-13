@@ -1,0 +1,48 @@
+spark-submit movies.py
+spark-submit movie_genres.py
+
+
+spark-submit --files config.json \
+     movies.py
+spark-submit --files config.json \
+     movie_genres.py
+
+spark-submit --files config.json \
+     main.py
+
+spark-submit \
+    --py-files jobs.zip \
+    --files config.json \
+    main.py --job movies
+
+# copy main.py, config.json to dist folder
+# zip the jobs files and move to dist folder
+build:
+<mkdir = create directory>
+<cp  = copy source_file dest_file>
+<zip [options] zipfile files_list>
+	rm -rf ./dist && mkdir ./dist
+	cp ./main.py ./dist 
+	cp ./config.json ./dist
+	zip -r dist/jobs.zip jobs
+     zip -r dist/shared.zip shared
+
+
+spark-submit \
+    --py-files jobs.zip, shared.zip \
+    --files config.json \
+    main.py --job movies
+
+
+build:
+	docker run --rm -v $(PWD):/foo -w /foo lambci/lambda:build-python3.7 \
+	pip install -r requirements.txt -t ./dist/libs
+     ''' install library within dist/libs '''
+	cd ./dist/libs && zip -r -D ../libs.zip .
+     ''' add libs.zip under the dist folder '''
+
+
+spark-submit \
+    --py-files jobs.zip, shared.zip, libs.zip \
+    --files config.json \
+    main.py --job movies
